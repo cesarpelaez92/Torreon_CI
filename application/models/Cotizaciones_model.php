@@ -1,0 +1,31 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Cotizaciones_model extends CI_Model {
+    
+    public function getCot(){
+        $this->db->where("estado", "1");
+        $resultados = $this->db->get("cotizaciones");;
+        return $resultados->result();
+    }
+
+    public function getCotizaciones()
+    {
+        $resultados = $this->db->get("cotizaciones");
+        return $resultados->result();
+    }
+
+    public function getProyectos($valor)
+    {
+        $this->db->select("proyecto_id, proyecto_nombre as label, cantidad_pisos, cantidad_aptos, descripcion");
+        $this->db->from("proyecto");
+        $this->db->like("proyecto_nombre", $valor);
+        $resultados = $this->db->get();
+        return $resultados->result_array();
+    }
+
+    public function save($data){
+        return $this->db->insert("cotizaciones", $data);
+    }
+
+}
