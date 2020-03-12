@@ -54,7 +54,7 @@
                                                       .$cotizacion->valor."*".$cotizacion->codigo_cliente."*".$cotizacion->descripcion."*".$cotizacion->proyecto_id."*"
                                                       .$cotizacion->piso."*".$cotizacion->apartamento_id ?>
                                 <td>
-                                    <button><span></span></button>
+                                    <button type="button" class="btn btn-info btn-view-cotizacion" value="<?php echo $cotizacion->cotizacion_id; ?>" data-toggle="modal" data-target="#modal-default"><span class=" fa fa-search"></span></button>
                                 </td>
                             </tr>
                             <?php endforeach;?>
@@ -75,7 +75,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Informacion del proyecto</h4>
+              <h4 class="modal-title">Detalle Cotizacion</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

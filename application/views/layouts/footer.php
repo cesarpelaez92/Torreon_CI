@@ -131,6 +131,20 @@
         $(this).closest("tr").remove();
     })
 
+    $(document).on("click", ".btn-view-cotizacion", function(){
+        valor_id = $(this).val();
+
+        $.ajax({
+            url: base_url + "movimientos/cotizaciones/view",
+            type: "POST",
+            dataType:"html",
+            data:{id: valor_id},
+            success: function(data){
+              $("#modal-default .modal-body").html(data);
+            }
+        })
+    });
+
 
 </script>
 </body>

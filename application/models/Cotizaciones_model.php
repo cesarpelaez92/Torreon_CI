@@ -15,6 +15,12 @@ class Cotizaciones_model extends CI_Model {
         return $resultados->result();
     }
 
+    public function getCotizacion($id){
+        $this->db->where("cotizacion_id",$id);
+        $resultado = $this->db->get("cotizaciones");
+        return $resultado->row();
+    }
+
     public function getProyectos($valor)
     {
         $this->db->select("proyecto_id, proyecto_nombre as label, cantidad_pisos, cantidad_aptos, descripcion");
@@ -27,5 +33,6 @@ class Cotizaciones_model extends CI_Model {
     public function save($data){
         return $this->db->insert("cotizaciones", $data);
     }
+
 
 }

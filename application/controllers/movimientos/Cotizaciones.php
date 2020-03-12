@@ -68,4 +68,13 @@ class Cotizaciones extends CI_Controller {
         }
     }
 
+    public function view(){
+        $idventa = $this->input->post("id");
+        $data = array(
+            "cotizacion" => $this->Cotizaciones_model->getCotizacion($idventa),
+        
+        );
+        $this->load->view("admin/cotizaciones/view", $data);
+    }
+
 }
