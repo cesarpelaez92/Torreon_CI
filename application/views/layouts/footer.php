@@ -1,6 +1,7 @@
-<!-- jQuery -->
 <script src="<?= base_url() ?> ../../plugins/jquery/jquery.min.js"></script>
 <script src="<?= base_url() ?> ../../plugins/jquery-ui/jquery-ui.js"></script>
+<script src="<?= base_url() ?> ../../plugins/jquery-print/jquery.print.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="<?= base_url() ?> ../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- SweetAlert2 -->
@@ -8,6 +9,16 @@
 <!-- DataTables -->
 <script src="<?= base_url() ?> ../../plugins/datatables/jquery.dataTables.js"></script>
 <script src="<?= base_url() ?> ../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+
+
 <!-- AdminLTE App -->
 <script src=" <?= base_url() ?> ../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
@@ -60,6 +71,30 @@
           }
         });
     });
+
+    
+    $('#example').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                title: "Listado de Cotizaciones",
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: "Listado de Cotizaciones",
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                }
+                
+            }
+        ],
+      })
+
+
     $("#example1").DataTable({
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por pagina",
@@ -144,6 +179,10 @@
             }
         })
     });
+
+    $(document).on("click", ".btn-print", function() {
+        $("#modal-default .modal-body").print();
+    })
 
 
 </script>

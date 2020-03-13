@@ -5,29 +5,39 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Cotizaciones
-            <small>/Listado</small>
+            <h1>Reportes
+            <small>/Cotizaciones</small>
             </h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
-
-      <!-- Default box -->
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-                <a href="<?php echo base_url();?>movimientos/cotizaciones/add" class="btn btn-primary btnflat" ><span class="fa fa-plus"></span> Agregar Cotizacion</a>
-            </div>
-          </div>
+    <div class="box box-solid box-default">
+            <div class="box-body">
+                <div class="form-row">
+                    <form action="<?php echo current_url();?>" method="POST" class="form-horizontal">
+                        <div class="row">
+                            <label for="" class="col-md-1 control-label">Desde:</label>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" name="fechainicio" value="<?php echo !empty($fechainicio) ? $fechainicio:'';?>">
+                            </div>
+                            <label for="" class="col-md-1 control-label">Hasta:</label>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" name="fechafin" value="<?php  echo !empty($fechafin) ? $fechafin:'';?>">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" name="buscar" value="Buscar" class="btn btn-primary">
+                                <a href="<?php echo base_url(); ?>reportes/cotizaciones" class="btn btn-danger">Restablecer</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
           <hr>
           <div class="row">
                 <div class="col-md-12">
-                    <table id="example1" class="table table-bordered btn-hover">
+                    <table id="example" class="table table-bordered btn-hover">
                         <thead>
                             <tr>
                                 <th>Id</th>

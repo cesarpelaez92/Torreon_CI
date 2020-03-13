@@ -18,6 +18,7 @@
 					<th>Proyecto</th>
 					<th>Piso</th>
 					<th>Apartamento</th>
+					<th>Valor</th>
 					<th>Detalles</th>
 				</tr>
 			</thead>
@@ -26,6 +27,7 @@
 					<td><?php echo $cotizacion->proyecto_id;?></td>
 					<td><?php echo $cotizacion->piso;?></td>
 					<td><?php echo $cotizacion->apartamento_id;?></td>
+					<td><?php echo $cotizacion->valor;?></td>
 					<td><?php echo $cotizacion->descripcion;?></td>
 				</tr>
 				

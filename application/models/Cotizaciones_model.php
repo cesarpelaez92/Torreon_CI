@@ -34,5 +34,12 @@ class Cotizaciones_model extends CI_Model {
         return $this->db->insert("cotizaciones", $data);
     }
 
+    public function getCotizacionesByDate($fechainicio, $fechafin){
+        $this->db->where("fecha_creacion >=",$fechainicio);
+        $this->db->where("fecha_creacion <=",$fechafin);
+        $resultado = $this->db->get("cotizaciones");
+        return $resultado->result();
+    }
+
 
 }

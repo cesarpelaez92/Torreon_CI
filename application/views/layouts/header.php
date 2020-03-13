@@ -10,6 +10,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?= base_url() ?> ../../plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="<?= base_url() ?> ../../plugins/jquery-ui/jquery-ui.css">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
@@ -31,7 +34,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="<?= base_url() ?>" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="<?php echo base_url();?>auth/logout" class="nav-link">Cerrar Sesion</a>
