@@ -1,11 +1,10 @@
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Asesores
+            <h1>Usuarios
             <small>/Listado</small>
             </h1>
           </div>
@@ -21,9 +20,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-12">
-                <?php if($permisos->insert == 1):?>
-                <a href="<?php echo base_url();?>mantenimiento/asesores/add" class="btn btn-primary btnflat" ><span class="fa fa-plus"></span> Agregar Asesor</a>
-                <?php endif;?>
+                <a href="<?php echo base_url();?>administrador/usuarios/add" class="btn btn-primary btnflat" ><span class="fa fa-plus"></span> Agregar Usuario</a>
             </div>
           </div>
           <hr>
@@ -32,36 +29,36 @@
                     <table id="example1" class="table table-bordered btn-hover">
                         <thead>
                             <tr>
-                                <th>Cedula</th>
-                                <th>Nombres</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
                                 <th>Apellidos</th>
-                                <th>Email</th>
+                                <th>Cedula</th>
+                                <th>Correo</th>
                                 <th>Telefono</th>
+                                <th>Codigo</th>
+                                <th>Rol</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if(!empty($asesores)):?>
-                                <?php foreach ($asesores as $asesor):?>
+                            <?php if(!empty($usuarios)):?>
+                                <?php foreach ($usuarios as $usuario):?>
                             <tr>
-                                <td><?php echo $asesor->asesor_cedula;?></td>
-                                <td><?php echo $asesor->asesor_nombres;?></td>
-                                <td><?php echo $asesor->asesor_apellidos;?></td>
-                                <td><?php echo $asesor->asesor_correo;?></td>
-                                <td><?php echo $asesor->asesor_telefono;?></td>
-                                <?php $dataAsesor = $asesor->asesor_cedula."*".$asesor->asesor_nombres."*"
-                                                      .$asesor->asesor_apellidos."*".$asesor->asesor_correo."*".$asesor->asesor_telefono; ?>
+                                <td><?php echo $usuario->asesor_cedula;?></td>
+                                <td><?php echo $usuario->asesor_nombres;?></td>
+                                <td><?php echo $usuario->asesor_apellidos;?></td>
+                                <td><?php echo $usuario->asesor_cedula;?></td>
+                                <td><?php echo $usuario->asesor_correo;?></td>
+                                <td><?php echo $usuario->asesor_telefono;?></td>
+                                <td><?php echo $usuario->codigo_asesor;?></td>
+                                <td><?php echo $usuario->rol;?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-info btn-view-asesor" data-toggle="modal" data-target="#modal-default" value="<?php echo $dataAsesor?>">
+                                        <button type="button" class="btn btn-info btn-view-usuario" data-toggle="modal" data-target="#modal-default" value="<?php echo $usuario->asesor_cedula?>">
                                             <span class="fa fa-search"></span>
                                         </button>
-                                        <?php if($permisos->update == 1):?>
-                                        <a href="<?php echo base_url();?>mantenimiento/asesores/edit/<?php echo $asesor->asesor_cedula;?>" class="btn btn-warning"><span class="fa fa-pencil-alt"></span></a>
-                                        <?php endif;?>
-                                        <?php if($permisos->delete == 1):?>
-                                        <a href="<?php echo base_url();?>mantenimiento/asesores/delete/<?php echo $asesor->asesor_cedula;?>" class="btn btn-danger btn-remove"><span class="fa fa-trash-alt"></span></a>
-                                        <?php endif;?>
+                                        <a href="<?php echo base_url();?>administrador/usuarios/edit/<?php echo $usuario->asesor_cedula;?>" class="btn btn-warning"><span class="fa fa-pencil-alt"></span></a>
+                                        <a href="<?php echo base_url();?>administrador/usuarios/delete/<?php echo $usuario->asesor_cedula;?>" class="btn btn-danger btn-remove"><span class="fa fa-trash-alt"></span></a>
                                     </div>
                                 </td>
                             </tr>
@@ -83,7 +80,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Informacion del Asesor</h4>
+              <h4 class="modal-title">Informacion del Usuario</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

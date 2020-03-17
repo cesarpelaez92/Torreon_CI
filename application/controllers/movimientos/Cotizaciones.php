@@ -2,16 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cotizaciones extends CI_Controller {
+    
+    private $permisos;
     public function __construct(){
+        
         parent::__construct();
         $this->load->model("Cotizaciones_model");
         $this->load->model("Clientes_model");
         $this->load->model("Asesores_model");
-        
+        $this->permisos = $this->backend_lib->control();
     }
 
     public function index(){
         $data = array(
+            'permisos' => $this->permisos,
             'cotizaciones' => $this->Cotizaciones_model->getCot(),
         );
         $this->load->view('layouts/header');
@@ -51,7 +55,7 @@ class Cotizaciones extends CI_Controller {
         $descripcionApto = $this->input->post("descripcionApto");
 
         $data = array(
-            'cedula_asesor'=> $asesor,
+            'asesor_cedula'=> $asesor,
             'fecha_creacion'=> $fecha,
             'valor'=> $valor,
             'codigo_cliente'=> $cliente,
@@ -72,7 +76,7 @@ class Cotizaciones extends CI_Controller {
         $idventa = $this->input->post("id");
         $data = array(
             "cotizacion" => $this->Cotizaciones_model->getCotizacion($idventa),
-        
+            
         );
         $this->load->view("admin/cotizaciones/view", $data);
     }

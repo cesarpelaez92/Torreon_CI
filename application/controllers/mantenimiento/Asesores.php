@@ -2,14 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Asesores extends CI_Controller {
+    
+    private $permisos;
+    
     public function __construct(){
         parent::__construct();
+        $this->permisos = $this->backend_lib->control();
         $this->load->model("Asesores_model");
     }
 
     public function index()
 	{
         $data = array(
+            'permisos' => $this->permisos,
             'asesores' => $this->Asesores_model->getAsesores(),
         );
 

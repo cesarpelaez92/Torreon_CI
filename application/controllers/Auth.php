@@ -31,6 +31,7 @@ class Auth extends CI_Controller {
             $data = array (
                 'id' => $res->codigo_asesor,
                 'Nombre_Usuario' => $res->asesor_nombres,
+                'rol' => $res->rol_id,
                 'login' => TRUE
             );
             $this->session->set_userdata($data);

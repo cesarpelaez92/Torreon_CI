@@ -4,9 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cotizaciones_model extends CI_Model {
     
     public function getCot(){
-        $this->db->where("estado", "1");
-        $resultados = $this->db->get("cotizaciones");;
-        return $resultados->result();
+        $this->db->select("c.*, cl.cliente_nombres, a.asesor_nombres, p.proyecto_nombre"); //p.proyecto_nombre
+        $this->db->from("cotizaciones c");
+        $this->db->join("clientes cl","c.codigo_cliente = cl.codigo_cliente");
+        $this->db->join("asesor a","c.asesor_cedula = a.asesor_cedula");
+        $this->db->join("proyecto p", "c.proyecto_id = p.proyecto_id");
+        $resultados = $this->db->get();
+
+        if ($resultados->num_rows()>0) {
+            return $resultados->result();
+        }else{
+            return false;
+        }
+
     }
 
     public function getCotizaciones()
@@ -16,9 +26,14 @@ class Cotizaciones_model extends CI_Model {
     }
 
     public function getCotizacion($id){
-        $this->db->where("cotizacion_id",$id);
-        $resultado = $this->db->get("cotizaciones");
-        return $resultado->row();
+        $this->db->select("c.*, cl.cliente_nombres,cl.cliente_cedula, cl.cliente_apellido, cl.telefono, a.asesor_nombres, p.proyecto_nombre");
+        $this->db->from("cotizaciones c");
+        $this->db->join("clientes cl","c.codigo_cliente = cl.codigo_cliente");
+        $this->db->join("asesor a","c.asesor_cedula = a.asesor_cedula");
+        $this->db->join("proyecto p", "c.proyecto_id = p.proyecto_id");
+        $this->db->where("c.cotizacion_id",$id);
+        $resultado = $this->db->get();
+        return $resultado ->row();
     }
 
     public function getProyectos($valor)

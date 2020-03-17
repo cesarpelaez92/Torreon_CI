@@ -57,7 +57,11 @@
                                             <span class="fa fa-search"></span>
                                         </button>
                                         <a href="<?php echo base_url();?>mantenimiento/clientes/edit/<?php echo $cliente->codigo_cliente;?>" class="btn btn-warning"><span class="fa fa-pencil-alt"></span></a>
-                                        <a href="<?php echo base_url();?>mantenimiento/clientes/delete/<?php echo $cliente->codigo_cliente;?>" class="btn btn-danger btn-remove"><span class="fa fa-trash-alt"></span></a>
+                                        <?php if($permisos->delete == 1):?>
+                                          <a href="<?php echo base_url();?>mantenimiento/clientes/delete/<?php echo $cliente->codigo_cliente;?>" class="btn btn-danger btn-remove"><span class="fa fa-trash-alt"></span></a>   
+                                        <?php endif;?>
+                                        
+                                        
                                     </div>
                                 </td>
                             </tr>

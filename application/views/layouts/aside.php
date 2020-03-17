@@ -101,15 +101,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../UI/general.html" class="nav-link">
+                <a href="<?php echo base_url(); ?>administrador/usuarios" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/icons.html" class="nav-link">
+                <a href="<?php echo base_url(); ?>administrador/permisos" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Proyectos</p>
+                  <p>Permisos</p>
                 </a>
               </li>
               

@@ -1,9 +1,9 @@
 <div class="row">
 	<div class="col-xs-6">	
 		<b>CLIENTE</b><br>
-		<b>Nombre:</b> <?php echo $cotizacion->codigo_cliente;?> <br>
-		<b>Nro Documento:</b> ??? <br>
-		<b>Telefono:</b> ??? <br>
+		<b>Nombre: </b><?php echo $cotizacion->cliente_nombres;?> <?php echo $cotizacion->cliente_apellido;?><br>
+		<b>Nro Documento:</b> <?php echo $cotizacion->cliente_cedula;?> <br>
+		<b>Telefono:</b> <?php echo $cotizacion->telefono;?> <br>
 	</div>	
 	<div class="col-xs-6">	
 		<b>Fecha</b> <?php echo $cotizacion->fecha_creacion;?>
@@ -24,7 +24,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><?php echo $cotizacion->proyecto_id;?></td>
+					<td><?php echo $cotizacion->proyecto_nombre;?></td>
 					<td><?php echo $cotizacion->piso;?></td>
 					<td><?php echo $cotizacion->apartamento_id;?></td>
 					<td><?php echo $cotizacion->valor;?></td>

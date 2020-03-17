@@ -44,15 +44,15 @@
                                 <?php foreach ($cotizaciones as $cotizacion):?>
                             <tr>
                                 <td><?php echo $cotizacion->cotizacion_id;?></td>
-                                <td><?php echo $cotizacion->cedula_asesor;?></td>
+                                <td><?php echo $cotizacion->asesor_nombres;?></td>
                                 <td><?php echo $cotizacion->fecha_creacion;?></td>
-                                <td><?php echo $cotizacion->codigo_cliente;?></td>
-                                <td><?php echo $cotizacion->proyecto_id;?></td>
+                                <td><?php echo $cotizacion->cliente_nombres;?></td>
+                                <td><?php echo $cotizacion->proyecto_nombre;?></td>
                                 <td><?php echo $cotizacion->valor;?></td>
               
-                                <?php $datacotizacion = $cotizacion->cotizacion_id."*".$cotizacion->cedula_asesor."*".$cotizacion->fecha_creacion."*"
+                                <?php $datacotizacion = $cotizacion->cotizacion_id."*".$cotizacion->asesor_cedula."*".$cotizacion->fecha_creacion."*"
                                                       .$cotizacion->valor."*".$cotizacion->codigo_cliente."*".$cotizacion->descripcion."*".$cotizacion->proyecto_id."*"
-                                                      .$cotizacion->piso."*".$cotizacion->apartamento_id ?>
+                                                      .$cotizacion->piso."*".$cotizacion->apartamento_id."*".$cotizacion->asesor_nombres;?> 
                                 <td>
                                     <button type="button" class="btn btn-info btn-view-cotizacion" value="<?php echo $cotizacion->cotizacion_id; ?>" data-toggle="modal" data-target="#modal-default"><span class=" fa fa-search"></span></button>
                                 </td>

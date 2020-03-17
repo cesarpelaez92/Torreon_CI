@@ -72,6 +72,18 @@
         });
     });
 
+    $(".btn-view-usuario").on("click", function(){
+        var id = $(this).val();
+        $.ajax({
+          url: base_url + "administrador/usuarios/view",
+          type: "POST",
+          data:{idusuario:id},
+          success :function(res){
+            $("#modal-default .modal-body").html(res);
+          }
+        });
+    });
+
     
     $('#example').DataTable({
         dom: 'Bfrtip',
