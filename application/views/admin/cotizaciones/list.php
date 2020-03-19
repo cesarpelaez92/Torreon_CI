@@ -34,7 +34,7 @@
                                 <th>Asesor</th>
                                 <th>fecha</th>
                                 <th>Cliente</th>
-                                <th>Proyecto</th>
+                                <th>Proyecto/Tipo Apartamento</th>
                                 <th>Valor</th>
                                 <th>Opciones</th>
                             </tr>

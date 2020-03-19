@@ -148,7 +148,7 @@
         minLength:1,
         select: function(event, ui){
           data = ui.item.proyecto_id + "*" + ui.item.label + "*" + ui.item.cantidad_pisos + "*" +
-                  ui.item.cantidad_aptos + "*" + ui.item.descripcion;
+                  ui.item.cantidad_aptos + "*" + ui.item.descripcion + "*" + ui.item.valor;
             $("#btn-agregar").val(data);
 
         },
@@ -161,10 +161,10 @@
           html = "<tr>";
             html +="<td><input type='hidden' name='idproyecto' value='"+infoproducto[0]+"'>"+infoproducto[0]+"</td>";
             html +="<td><input type='hidden' name='nombreProyecto' value='"+infoproducto[1]+"'>"+infoproducto[1]+"</td>";
-            html +="<td><input type='hidden' name='pisoElegido'><input type='text' name='piso' value='1'></td>";
-            html +="<td><input type='hidden' name='aptoElegido'><input type='text' name='apto' value='101'></td>";
-            html +="<td <input type='hidden' name='precio' value=''><input type='text' name='valor' value=''></td>";
-            html +="<td><input type='hidden' name='descripcionApto[]'><input type='text' name='descripcionApto' value='Baños: Alcobas: ,Sala, cocina, patio'></td>";
+            html +="<td><input type='hidden' name='pisoElegido' value='"+infoproducto[2]+"'><input type='text' name='piso' value='"+infoproducto[2]+"'></td>";
+            html +="<td><input type='hidden' name='aptoElegido' value='"+infoproducto[2]+"'><input type='text' name='apto' value='"+infoproducto[2]+"'></td>";
+            html +="<td <input type='hidden' name='precio' value='"+infoproducto[5]+"'><input type='text' name='valor' value='"+infoproducto[5]+"'></td>";
+            html +="<td><input type='hidden' name='descripcionApto[]' value='"+infoproducto[4]+"'><input type='text' name='descripcionApto' value='"+infoproducto[4]+"'></td>";
               html += "<td><button type='button' class='btn btn-danger btn-remove-proyecto'><span class='fa fa-trash-alt'></span></button></td>"
           html +="</tr>";
 

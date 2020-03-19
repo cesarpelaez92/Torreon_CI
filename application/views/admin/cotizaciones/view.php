@@ -15,7 +15,7 @@
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Proyecto</th>
+					<th>Proyecto/Tipo apartamento</th>
 					<th>Piso</th>
 					<th>Apartamento</th>
 					<th>Valor</th>

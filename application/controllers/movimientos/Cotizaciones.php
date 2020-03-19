@@ -66,7 +66,7 @@ class Cotizaciones extends CI_Controller {
         );
 
         if ($this->Cotizaciones_model->save($data)) {
-            redirect(base_url()."movimientos/cotizaciones/add");
+            redirect(base_url()."movimientos/cotizaciones");
         }else{
             redirect(base_url()."movimientos/cotizaciones/add");
         }

@@ -49,8 +49,8 @@
                                     <tr>
                                         <th>Codigo</th>
                                         <th>Nombre</th>
-                                        <th>Pisos Deseado</th>
-                                        <th>Apartamento</th>
+                                        <th>Cantidad de Pisos</th>
+                                        <th>Piso Deseado</th>
                                         <th>Valor Total</th>
                                         <th>Descripcion Apto</th>
                                         <th>Opciones</th>

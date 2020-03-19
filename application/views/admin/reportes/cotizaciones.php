@@ -44,7 +44,7 @@
                                 <th>Asesor</th>
                                 <th>fecha</th>
                                 <th>Cliente</th>
-                                <th>Proyecto</th>
+                                <th>Proyecto/tipo de Apartamento</th>
                                 <th>Valor</th>
                                 <th>Opciones</th>
                             </tr>
@@ -60,9 +60,7 @@
                                 <td><?php echo $cotizacion->proyecto_nombre;?></td>
                                 <td><?php echo $cotizacion->valor;?></td>
               
-                                <?php $datacotizacion = $cotizacion->cotizacion_id."*".$cotizacion->asesor_nombres."*".$cotizacion->fecha_creacion."*"
-                                                      .$cotizacion->valor."*".$cotizacion->cliente_nombres."*".$cotizacion->descripcion."*".$cotizacion->proyecto_id."*"
-                                                      .$cotizacion->piso."*".$cotizacion->apartamento_id ?>
+                        
                                 <td>
                                     <button type="button" class="btn btn-info btn-view-cotizacion" value="<?php echo $cotizacion->cotizacion_id; ?>" data-toggle="modal" data-target="#modal-default"><span class=" fa fa-search"></span></button>
                                 </td>
