@@ -161,9 +161,10 @@
           html = "<tr>";
             html +="<td><input type='hidden' name='idproyecto' value='"+infoproducto[0]+"'>"+infoproducto[0]+"</td>";
             html +="<td><input type='hidden' name='nombreProyecto' value='"+infoproducto[1]+"'>"+infoproducto[1]+"</td>";
-            html +="<td><input type='hidden' name='pisoElegido' value='"+infoproducto[2]+"'><input type='text' name='piso' value='"+infoproducto[2]+"'></td>";
-            html +="<td><input type='hidden' name='aptoElegido' value='"+infoproducto[2]+"'><input type='text' name='apto' value='"+infoproducto[2]+"'></td>";
-            html +="<td <input type='hidden' name='precio' value='"+infoproducto[5]+"'><input type='text' name='valor' value='"+infoproducto[5]+"'></td>";
+            html +="<td><input type='hidden' name='pisoElegido' value='"+infoproducto[2]+"'><input type='text' name='apto' value='"+infoproducto[2]+"'></td>";
+            html +="<td><input type='hidden' name='aptoElegido' value='1'><input type='text' min='1' name='piso' value='1' class='altura'></td>";
+            html +="<td <input type='hidden' name='valores' value='"+infoproducto[5]+"'><p>"+infoproducto[5]+"</p></td>";
+            html +="<td <input type='hidden' name='piso' value='"+infoproducto[5]+"'><input type='text' name='valor' value=''></td>";
             html +="<td><input type='hidden' name='descripcionApto[]' value='"+infoproducto[4]+"'><input type='text' name='descripcionApto' value='"+infoproducto[4]+"'></td>";
               html += "<td><button type='button' class='btn btn-danger btn-remove-proyecto'><span class='fa fa-trash-alt'></span></button></td>"
           html +="</tr>";
@@ -173,6 +174,19 @@
         alert("Seleccione un proyecto")
       }
     })
+
+    $(document).on("keyup", "#tbventas input.altura", function(){	        
+          const precio = parseInt($(this).closest("tr").find("td:eq(4)").text());
+          const cuota = 500000
+          cantidad = parseInt($(this).val());
+          importe = cantidad * cuota ;
+          importeTotal = precio + importe ;
+          console.log(cantidad, precio);
+          
+	        $(this).closest("tr").find("td:eq(5)").children("p").text(importeTotal);
+	        $(this).closest("tr").find("td:eq(5)").children("input").val(importeTotal);
+	    })   
+
 
     $(document).on("click", ".btn-remove-proyecto", function(){
         $(this).closest("tr").remove();

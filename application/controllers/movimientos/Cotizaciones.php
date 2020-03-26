@@ -48,7 +48,7 @@ class Cotizaciones extends CI_Controller {
         $cliente = $this->input->post("idcliente");
         $asesor = $this->session->userdata("id");
         $fecha = $this->input->post("fecha");
-        $proyecto = $this->input->post("proyecto");
+        $proyecto = $this->input->post("idproyecto");
         $piso = $this->input->post("piso");
         $apto = $this->input->post("apto");
         $valor = $this->input->post("valor");

@@ -51,6 +51,7 @@
                                         <th>Nombre</th>
                                         <th>Cantidad de Pisos</th>
                                         <th>Piso Deseado</th>
+                                        <th>Valor</th>
                                         <th>Valor Total</th>
                                         <th>Descripcion Apto</th>
                                         <th>Opciones</th>
