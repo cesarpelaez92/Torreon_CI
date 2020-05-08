@@ -33,7 +33,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active ">
-      <img class="img-fluid rounded mx-auto d-block"  width="60%" height="70%"src="<?= base_url() ?> ../../dist/img/Torreon1.jpg" alt="Torreon 1">
+      <img class="img-fluid rounded mx-auto d-block"  width="60%" height="90%"src="<?= base_url() ?> ../../dist/img/Torreon1.jpg" alt="Torreon 1">
       <div class="carousel-caption d-none d-md-block">
         <h5>Torreon 1</h5>
       </div>

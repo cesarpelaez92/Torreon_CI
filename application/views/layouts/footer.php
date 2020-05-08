@@ -181,8 +181,6 @@
           cantidad = parseInt($(this).val());
           importe = cantidad * cuota ;
           importeTotal = precio + importe ;
-          console.log(cantidad, precio);
-          
 	        $(this).closest("tr").find("td:eq(5)").children("p").text(importeTotal);
 	        $(this).closest("tr").find("td:eq(5)").children("input").val(importeTotal);
 	    })   

@@ -39,6 +39,7 @@ class Proyectos extends CI_Controller {
         $pisos = $this->input->post("cantidad_pisos");
         $aptos = $this->input->post("cantidad_aptos");
         $descripcion = $this->input->post("descripcion");
+        $valor = $this->input->post("valor");
         
         $this->form_validation->set_rules("proyecto_nombre","proyecto_nombre","required|is_unique[proyecto.proyecto_nombre]");
 
@@ -49,6 +50,7 @@ class Proyectos extends CI_Controller {
                 'cantidad_pisos' =>$pisos,
                 'cantidad_aptos' =>$aptos,
                 'descripcion' =>$descripcion,
+                'valor' =>$valor,
                 'estado' => "1",
             );
     

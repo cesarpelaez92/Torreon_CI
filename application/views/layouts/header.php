@@ -34,7 +34,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="<?= base_url() ?>" class="nav-link">Home</a>
+                    <a href="<?= base_url() ?>" class="nav-link">Inicio</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="<?php echo base_url();?>auth/logout" class="nav-link">Cerrar Sesion</a>

@@ -37,7 +37,6 @@ class Usuarios_model extends CI_Model {
         $this->db->where("codigo_asesor", $userPassword);
 
         $resultados = $this->db->get('asesor');
-        console.log($resultado);
 
         if ($resultados->num_rows()>0) {
             return $resultados->row();

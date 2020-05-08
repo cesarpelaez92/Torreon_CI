@@ -1,17 +1,39 @@
 <div class="row">
-	<div class="col-xs-6">	
-		<b>CLIENTE</b><br>
-		<b>Nombre: </b><?php echo $cotizacion->cliente_nombres;?> <?php echo $cotizacion->cliente_apellido;?><br>
-		<b>Nro Documento:</b> <?php echo $cotizacion->cliente_cedula;?> <br>
-		<b>Telefono:</b> <?php echo $cotizacion->telefono;?> <br>
-	</div>	
-	<div class="col-xs-6">	
-		<b>Fecha</b> <?php echo $cotizacion->fecha_creacion;?>
-	</div>	
+		<table class="table table-borderless">
+			<tr>
+				<td><img src="<?= base_url() ?> ../../dist/img/icono.svg" alt="" width="20%" height="20%"></td>
+				<td><b>CONSTRUCTORA TORREON</b></td><br>
+				<td>
+				<b>Dir: </b> Cra 6 # 53-29 <br>
+							Ibague, Tolima <br>
+				<b>Tel: </b> 2780505</td>
+			</tr>
+		</table>
+</div>	
+<br>
+<div class="row">
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>Nombre</th>
+					<th>Identificacion</th>
+					<th>Telefono</th>
+					<th>Fecha</th>
+				</tr>	
+			</thead>
+			<tbody>
+			<tr>
+				<td><?php echo $cotizacion->cliente_nombres;?> <?php echo $cotizacion->cliente_apellido;?></td>
+				<td><?php echo $cotizacion->cliente_cedula;?></td>
+				<td><?php echo $cotizacion->telefono;?> <br></td>
+				<td><?php echo $cotizacion->fecha_creacion;?></td>
+			</tr>
+			</tbody>
+		</table>
+
 </div>
 <br>
 <div class="row">
-	<div class="col-xs-12">
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -32,5 +54,4 @@
 			</tbody>
 			
 		</table>
-	</div>
 </div>

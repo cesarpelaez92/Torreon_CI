@@ -48,6 +48,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="valor">Precio</label>
+                            <input type="number" class="form-control" id="valor" name="valor">
+                        </div>
+
+                        <div class="form-group">
                             <label for="descripcion">Descripcion</label>
                             <input type="text" class="form-control" id="descripcion" name="descripcion">
                         </div>
